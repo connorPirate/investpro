@@ -1,0 +1,1 @@
+Placez ici les images utilisées dans le site. Les images originales sont à la racine du projet (duuu/). 

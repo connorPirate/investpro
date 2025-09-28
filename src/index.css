@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+/* Styles personnalisés */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-white to-pink-50 min-h-screen;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Boutons personnalisés */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-600 border-2 border-primary-200 px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg hover:border-primary-300 transform hover:scale-105 transition-all duration-300;
+  }
+  
+  /* Cards personnalisées */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-pink-glow transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply transform hover:scale-105 hover:shadow-xl transition-all duration-300;
+  }
+  
+  /* Inputs personnalisés */
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-200 focus:border-primary-300 transition-all duration-300 bg-white;
+  }
+  
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+  
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800;
+  }
+  
+  /* Animations personnalisées */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Effets de glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  /* Gradients personnalisés */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500;
+  }
+  
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-400 via-secondary-500 to-primary-500;
+  }
+  
+  /* Effets de hover */
+  .hover-lift {
+    @apply transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* Textes avec dégradé */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Animations keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 5px rgba(236, 72, 153, 0.5); }
+    to { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
+  }
+  
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-primary-400 to-secondary-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-primary-500 to-secondary-500;
+  }
+  
+  /* Sélection de texte */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+  
+  /* Focus visible */
+  .focus-visible {
+    @apply outline-none ring-2 ring-primary-300 ring-offset-2;
+  }
+}
+
+/* Responsive design amélioré */
+@media (max-width: 640px) {
+  .card {
+    @apply rounded-xl;
+  }
+  
+  .btn-primary, .btn-secondary {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Dark mode support (optionnel) */
+@media (prefers-color-scheme: dark) {
+  .dark {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark .input-field {
+    @apply bg-gray-800 border-gray-600 text-white;
+  }
+} 
